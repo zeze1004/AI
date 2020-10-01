@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
-#include "Perceptron.h"
-
+//#include "Perceptron.h"
 
 using namespace std;
 /*
@@ -105,7 +104,8 @@ int main() {
 
 int main(void)
 {
-	// Dataset for training
+    // 먼저 입력과, 입력에 따른 원하는 결과값을 미리 적어두고
+	// Dataset for training 아항데이터셋이 이런거얌
 	int *training_input[4] = {
 		new int[2]{ 0, 0 },
 		new int[2]{ 0, 1 },
@@ -121,23 +121,40 @@ int main(void)
 	rand();
 
 	// Initialize perceptrons
-	Perceptron perceptron_AND(2);
-	Perceptron perceptron_OR(2);
+    // 3개의 퍼셉트론을 각각 만든 다음, (이때 입력이 2개라고 알려줌으로써 2개의 weight를 준비하게 함)
+    // 모듈은 개념적인 말이고
+    // 일단 과제에서 말하는 모듈은 그냥 헤더파일로 따로 구현하란거고
+    // 우리는 그 모듈이란 것을(헤더파일을) 가져와서 쓰는거야
+    // 그 안에 정의된 Perceptron이라는 클래스를 사용한거야
+    // 일단 이건 C언어 문법이랑 '클래스' 개념이 부족해서 그런거야
+    // 인공지능 내용이 문제가 아니야..
+    // 고거는 너의 선택에 달린거고
+    // 암튼 C언어 공부를 계소 해야하는건 맞아
+    // 그것도 일단 원하는 것을 구현하는 능력이 뒷받침되지 못해서 어려운 거라고 생각해
+    // 알고리즘적인 원리를 떠나서, 내가 A를 구현하겠다! 하면 구현할 ㅅ ㅜ있어ㅑ 하는데
+    // 거기서 막힌다고 봐 프로그래머스 1단계 문제나 백준 브론즈티어나 [단계별로 풀어보기] 추천
+    // 암튼 난 더이상 인공지능 들어라말라 안 할거야 :( 그래도 그렇게 생각하는거 같아서
+    // 확실히 말해야겠어
+    // 드랍이나 수강은 너의 자유야
+    // 몰랑이는 내꺼야 <-- 확신 저아
+    Perceptron perceptron_AND(2);  // 과연될랑가 환경변수 했는데...^^ 인생사 맘대로 되는게업군,,,도와줘서 고마오 거노찡
+	Perceptron perceptron_OR(2); // 그럼 이만
 	Perceptron perceptron_XOR(2);
 
-	// Train AND-gate
+	// Train AND-gate 
+    // 먼저 AND게이트를 훈련시키자. 훈련에 필요한 데이터셋은 입력은 위의 training_input이고, 결과는 training_output_AND야
 	printf("Train AND\n");
-	perceptron_AND.train(4, training_input, training_output_AND);
+	perceptron_AND.train(4, training_input, training_output_AND); //여기서 쓰는거구낭 >///<
 
 	// Train OR-gate
-	printf("Train OR\n");
+	printf("Train OR\n"); // 나머지는 동일
 	perceptron_OR.train(4, training_input, training_output_OR);
 
 	// Train XOR-gate
-	printf("Train XOR\n");
+	printf("Train XOR\n"); // 나머지는 동일
 	perceptron_XOR.train(4, training_input, training_output_XOR);
 
-	// Wait for end
+	// Wait for end 끗
 	printf("Enter to exit\n");
 	getchar();
 }
