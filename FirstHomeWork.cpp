@@ -135,10 +135,10 @@ int main(void)
     // 거기서 막힌다고 봐 프로그래머스 1단계 문제나 백준 브론즈티어나 [단계별로 풀어보기] 추천
     // 암튼 난 더이상 인공지능 들어라말라 안 할거야 :( 그래도 그렇게 생각하는거 같아서
     // 확실히 말해야겠어
-    // 드랍이나 수강은 너의 자유야
+    // 드랍이나 수강은 너의 자유야(상처받았어 )
     // 몰랑이는 내꺼야 <-- 확신 저아
-    Perceptron perceptron_AND(2);  // 과연될랑가 환경변수 했는데...^^ 인생사 맘대로 되는게업군,,,도와줘서 고마오 거노찡
-	Perceptron perceptron_OR(2); // 그럼 이만
+    Perceptron perceptron_AND(2);  
+	Perceptron perceptron_OR(2); 
 	Perceptron perceptron_XOR(2);
 
 	// Train AND-gate 
